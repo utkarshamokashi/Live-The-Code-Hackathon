@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login V9</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/icons/favicon.ico' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/animate/animate.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/animsition/css/animsition.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/daterangepicker/daterangepicker.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/material-kit.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/material-kit.css.map' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/material-kit.min.css' %}"
+    />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <div class="container">
+        <div class="navbar-translate">
+          <a class="navbar-brand">
+            <img
+              src="{% static 'images/come-unity.png' %}"
+              width="70"
+              height="70"
+              alt=""
+            />
+            Come-Unity
+          </a>
+        </div>
+      </div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link link text-white display-4" href="dashboard"
+            >dashboard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link text-white display-4" href="aboutUs"
+            >About Us</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link text-white display-4" href="update_id"
+            >Profile</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="page-header header-filter"
+      data-parallax="true"
+      style="height: 500px; background-image: url('/static/images/bg3.jpg')"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <div class="brand text-center">
+              <h1>COME - UNITY</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-examples">
+      <div class="container-fluid text-center">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <a href="{% url 'form' %}" class="txt2 hov1">
+              <span class="input-group-append">
+                <button type="button" class="btn btn-primary btn-lg btn-block">
+                  Make your own Community!
+                </button>
+              </span>
+            </a>
+          </div>
+        </div>
+        <hr />
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          {% for data in db_list%}
+          <div class="col-sm-4 d-flex pb-3">
+            <div class="card">
+              <img src="{{data.bg_img}}" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">{{data.c_name}}</h5>
+                <p class="card-text">{{data.desc}}</p>
+
+                <button type="submit" class="btn btn-primary">Join !</button>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- <div class="col-md-6">
+          <a href="{% url 'community' %}" target="_blank">
+            <img src="{% static 'images/profile.jpg' %}" alt="Rounded Image" class="img-raised rounded img-fluid">
+        </a>
+        <br>
+        <br>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'community' %}" target="_blank">
+              <img src="{% static 'images/profile.jpg' %}" alt="Rounded Image" class="img-raised rounded img-fluid">
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'community' %}" target="_blank">
+              <img src="{% static 'images/landing.jpg' %}" alt="Rounded Image" class="img-raised rounded img-fluid">
+            </a>
+          </div> -->
+      </div>
+    </div>
+    <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/map-custom.js' %}"></script>
+    <script src="{% static 'js/material-kit.js' %}"></script>
+    <script src="{% static 'js/main.js.map' %}"></script>
+    <script src="{% static 'js/material-kit.min.js' %}"></script>
+  </body>
+</html>

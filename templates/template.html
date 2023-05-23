@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--     Fonts and icons     -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' %}"
+    />
+    <!-- Material Kit CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/material-kit.css' %}"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' %}"
+      integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA="
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    {% for data in data %}
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <div class="container">
+        <div class="navbar-translate">
+          <a class="navbar-brand">
+            <img src="{{data.logo}}" width="70" height="70" alt="" />
+            Come-Unity
+          </a>
+        </div>
+      </div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link link text-white display-4" href="dashboard"
+            >dashboard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link text-white display-4" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link text-white display-4" href="dashboard"
+            >Profile</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="page-header header-filter"
+      data-parallax="true"
+      style="height: 400px; background-image: url('{{data.bg_img}}')"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <div class="brand text-center">
+              <h1>{{data.c_name}}</h1>
+              <h3 class="title text-center">
+                Behind this is the community bg img
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main main-raised">
+      <div class="container">
+        <div class="section text-center">{{data.desc}}</div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="ml-5 col-md-6">
+        <a href="{% url 'community' %}" class="txt2 hov1">
+          <img
+            src="{% static 'images/landing.jpg' %}"
+            alt="Rounded Image"
+            class="img-raised rounded img-fluid"
+          />
+          <iframe src="{{data.c_url}}"> </iframe>
+        </a>
+      </div>
+      <div class="ml-2">
+        <iframe width="550" height="375" src="{{data.url}}"> </iframe>
+      </div>
+    </div>
+    <div class="container">
+      <div class="text-center mb-5">
+        <h5 class="text-primary h6"></h5>
+        <h2 class="display-20 display-md-18 display-lg-16">BLOGS!</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-2-6">
+          <article class="card card-style2">
+            <div class="card-img">
+              <img
+                class="img-fluid"
+                src="{% static 'images/bg.jpg' %}"
+                alt="..."
+              />
+              <div class="date"><span>15</span>Sep</div>
+            </div>
+            <div class="card-body">
+              <h3 class="h5">
+                <a href="#!">Loft therapy taking care of your home</a>
+              </h3>
+              <p class="display-30">
+                Loft therapy will be a thing of the past and here's why.
+              </p>
+              <a href="#!" class="read-more">read more</a>
+            </div>
+            <div class="card-footer">
+              <ul>
+                <li>
+                  <a href="#!"><i class="fas fa-user"></i>Brittany Hucks</a>
+                </li>
+                <li>
+                  <a href="#!"
+                    ><i class="far fa-comment-dots"></i><span>26</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-2-6">
+          <article class="card card-style2">
+            <div class="card-img">
+              <img
+                class="img-fluid"
+                src="{% static 'images/city.jpg' %}"
+                alt="..."
+              />
+              <div class="date"><span>18</span>Aug</div>
+            </div>
+            <div class="card-body">
+              <h3 class="h5">
+                <a href="#!">All you need to know about cleaning</a>
+              </h3>
+              <p class="display-30">
+                Five common mistakes everyone makes in about cleaning.
+              </p>
+              <a href="#!" class="read-more">read more</a>
+            </div>
+            <div class="card-footer">
+              <ul>
+                <li>
+                  <a href="#!"><i class="fas fa-user"></i>Mark Abell</a>
+                </li>
+                <li>
+                  <a href="#!"
+                    ><i class="far fa-comment-dots"></i><span>28</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-2-6">
+          <article class="card card-style2">
+            <div class="card-img">
+              <img
+                class="img-fluid"
+                src="{% static 'images/bg2.jpg' %}"
+                alt="..."
+              />
+              <div class="date"><span>24</span>May</div>
+            </div>
+            <div class="card-body">
+              <h3 class="h5">
+                <a href="#!">This cleaning tips will haunt you forever</a>
+              </h3>
+              <p class="display-30">
+                Seven difficult things you should know about haunt.
+              </p>
+              <a href="#!" class="read-more">read more</a>
+            </div>
+            <div class="card-footer">
+              <ul>
+                <li>
+                  <a href="#!"><i class="fas fa-user"></i>Curtis Chester</a>
+                </li>
+                <li>
+                  <a href="#!"
+                    ><i class="far fa-comment-dots"></i><span>18</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-2-6 mb-lg-0">
+          <article class="card card-style2">
+            <div class="card-img">
+              <img
+                class="img-fluid"
+                src="{% static 'images/bg7.jpg' %}"
+                alt="..."
+              />
+              <div class="date"><span>09</span>May</div>
+            </div>
+            <div class="card-body">
+              <h3 class="h5">
+                <a href="#!"
+                  >Five things to know about cleaning service office</a
+                >
+              </h3>
+              <p class="display-30">
+                Seven difficult things you should know about haunt.
+              </p>
+              <a href="#!" class="read-more">read more</a>
+            </div>
+            <div class="card-footer">
+              <ul>
+                <li>
+                  <a href="#!"><i class="fas fa-user"></i>Kathleen</a>
+                </li>
+                <li>
+                  <a href="#!"
+                    ><i class="far fa-comment-dots"></i><span>24</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-2-6 mb-md-0">
+          <article class="card card-style2">
+            <div class="card-img">
+              <img
+                class="img-fluid"
+                src="{% static 'images/city-profile.jpg' %}"
+                alt="..."
+              />
+              <div class="date"><span>14</span>Apr</div>
+            </div>
+            <div class="card-body">
+              <h3 class="h5">
+                <a href="#!"
+                  >Seven difficult things about cleaning service like</a
+                >
+              </h3>
+              <p class="display-30">
+                Seven difficult things you should know about haunt.
+              </p>
+              <a href="#!" class="read-more">read more</a>
+            </div>
+            <div class="card-footer">
+              <ul>
+                <li>
+                  <a href="#!"><i class="fas fa-user"></i>Admin</a>
+                </li>
+                <li>
+                  <a href="#!"
+                    ><i class="far fa-comment-dots"></i><span>09</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <article class="card card-style2">
+            <div class="card-img">
+              <img
+                class="img-fluid"
+                src="{% static 'images/bg-01.jpg' %}"
+                alt="..."
+              />
+              <div class="date"><span>26</span>Mar</div>
+            </div>
+            <div class="card-body">
+              <h3 class="h5">
+                <a href="#!">The hidden agenda of window cleaning concept</a>
+              </h3>
+              <p class="display-30">
+                Seven difficult things you should know about haunt.
+              </p>
+              <a href="#!" class="read-more">read more</a>
+            </div>
+            <div class="card-footer">
+              <ul>
+                <li>
+                  <a href="#!"><i class="fas fa-user"></i>Vickie</a>
+                </li>
+                <li>
+                  <a href="#!"
+                    ><i class="far fa-comment-dots"></i><span>11</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+</html>
